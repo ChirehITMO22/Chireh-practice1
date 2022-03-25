@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sign In</title>
+	<link rel="stylesheet" type="text/css" href="slide navbar style.css">
+<link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+</head>
+<body>
+    {% with message =get_flashed_messages() %}
+    {% if messages %}
+        <ul class="flash">
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+            
+        </ul>
+        {% endfor %}
+        {% endwith %}
+	<div class='bold-line'></div>
+<div class='container'>
+  <div class='window'>
+    <div class='overlay'></div>
+    <div class='content'>
+      <div class='welcome'>Hello There! Sign In</div>
+      <div class='input-fields'>
+        <input type='text' placeholder='Username' class='input-line full-width'></input>
+        <input type='password' placeholder='Password' class='input-line full-width'></input>
+
+      </div>
+      <div><button class='ghost-round full-width'>Connect</button></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
