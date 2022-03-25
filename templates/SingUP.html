@@ -6,23 +6,27 @@
 <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
 </head>
 <body>
-	{% with message =get_flashed_messages() %}
-    {% if messages %}
-        <ul class="flash">
-            {% for message in messages %}
-            <li>{{ message }}</li>
-            {% endfor %}
-            
-        </ul>
-        {% endfor %}
-        {% endwith %}
+	
 	<div class='bold-line'></div>
 <div class='container'>
   <div class='window'>
     <div class='overlay'></div>
     <div class='content'>
-      <div class='welcome'>Hello There!</div>
-      <form  method="POST" action="" >
+      <div class='welcome'>Hello There! <hr>
+        <p>
+          {% with message = get_flashed_messages() %}
+          {% if messages %}
+          <ul class="flashes">
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+          {% endwith %}
+        </p>
+        
+      </div>
+      <form  method="POST" action="/SingUp" >
       <div class='input-fields'>
         <input type='text' name='username' placeholder='Username' class='input-line full-width'></input>
         <input type='password' name='password' placeholder='Password' class='input-line full-width'></input>

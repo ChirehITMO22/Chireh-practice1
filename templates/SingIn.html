@@ -14,7 +14,7 @@
             {% endfor %}
             
         </ul>
-        {% endfor %}
+        {% endif %}
         {% endwith %}
 	<div class='bold-line'></div>
 <div class='container'>
@@ -22,7 +22,7 @@
     <div class='overlay'></div>
     <div class='content'>
       <div class='welcome'>Hello There! Sign In</div>
-        <form  method="POST" action="" >
+        <form  method="POST" action="/SingIn" >
         <div class='input-fields'>
         <input type='text' placeholder='Username' class='input-line full-width'></input>
         <input type='password' placeholder='Password' class='input-line full-width'></input>
